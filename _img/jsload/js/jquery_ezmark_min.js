@@ -1,0 +1,9 @@
+;eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('(3($){$.t.v=3(2){2=2||{};g 1={f:2.f||\'8-e\',i:2.i||\'8-l\',7:2.7||\'8-a\',9:2.9||\'8-u\',h:\'8-w\'};y 0.m(3(){g $0=$(0);g j=$0.b(\'d\')==\'e\'?\'<n r="\'+1.f+\'">\':\'<n r="\'+1.i+\'">\';4($0.b(\'d\')==\'e\'){$0.6(1.h).q(j).s(3(){4($(0).c(\':a\')){$(0).5().6(1.7)}k{$(0).5().o(1.7)}});4($0.c(\':a\')){$0.5().6(1.7)}}k 4($0.b(\'d\')==\'l\'){$0.6(1.h).q(j).s(3(){$(\'x[p="\'+$(0).b(\'p\')+\'"]\').m(3(){4($(0).c(\':a\')){$(0).5().6(1.9)}k{$(0).5().o(1.9)}})});4($0.c(\':a\')){$0.5().6(1.9)}}})}})(z);',36,36,'this|defaultOpt|options|function|if|parent|addClass|checkedCls|ez|selectedCls|checked|attr|is|type|checkbox|checkboxCls|var|hideCls|radioCls|wrapTag|else|radio|each|div|removeClass|name|wrap|class|change|fn|selected|ezMark|hide|input|return|jQuery'.split('|'),0,{}))
+var css = '.ez-hide{opacity:0;filter:alpha(opacity=0);height:100%;width: 100%;cursor: pointer;}.ez-checkbox{background:transparent url('+CONFIG.MEDIA+'/imgs/user/checkbox-red.png) 0 1px no-repeat;display:inline-block;}.ez-radio{background:transparent url('+CONFIG.MEDIA+'/imgs/user/setting.png) right -686px no-repeat;width:24px;height:25px;}.ez-checked{background-position:0 -18px;}.ez-selected{background-position:right -745px;}.ez-checkbox-green{background:transparent url('+CONFIG.MEDIA+'/imgs/user/checkbox-green.png) 0 1px no-repeat;display:inline-block;*display:inline;}.ez-checked-green{background-position:0 -18px;}.ez-checkbox,.ez-radio{zoom:1;*display:inline;_height:30px;}'
+_OPT.load.evalcss(css);
+delete css;
+function jquery_ezmark_min_exec($selector)
+{
+	
+	jQuery($selector).ezMark();
+}
