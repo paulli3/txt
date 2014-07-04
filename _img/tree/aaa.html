@@ -1,0 +1,32 @@
+<script src="lib/jquery.js"></script>
+<script src="jquery.treeview.js"></script>
+<link rel="stylesheet" href="jquery.treeview.css" />
+    <link rel="stylesheet" href="demo/red-treeview.css" />
+	<link rel="stylesheet" href="demo/screen.css" />
+<ul id="browser" class="filetree">
+	<li> 123
+		<ul>
+			<li>blabla</li>
+		</ul>
+	</li>
+	<li>
+		1212121
+			
+				<ul id="folder21">
+					<li>more text</li>
+					<li>and here, too</li>
+				</ul>
+			
+		
+	</li>
+	<li class="closed">this is closed!
+		
+	</li>
+
+</ul>
+
+	<script type="text/javascript">
+		$(function() {
+			$("#browser").treeview();
+		});
+</script>
