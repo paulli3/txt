@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+*{ padding:0; margin:0;}
+a { text-decoration:none}
+body{ font-size:12px; font-family:"微软雅黑"}
+ul ,dl,ol{ list-style:none;}
+.cl{ clear:both}
+
+
+.main{width:960px; margin:0 auto}
+.l{ float:left;}
+.r{ float:right;}
+.cl{ clear:both;}
+a img{ border:0;}
+
+.header{ background:#655b76; padding:20px 0;}
+.header .toplist{ width:210px;}
+.header .toplist dl { padding-bottom:20px; background:#62617b;}
+.header .toplist dt { color:#FFF; background: url(../img/bg.png) no-repeat 10px 13px #587486; height:53p; line-height:53px; text-indent:40px;}
+.header .toplist img{ width:36px; height:36px;}
+.header .toplist dd .r{width:142px;}
+.header .toplist dd { padding-top:20px; padding-left:20px;}
+.header .toplist dd a{ color:#FFF;} 
+.header .toplist dd span{ color:#43a4ab; display:block; background:url(../img/bg.png) no-repeat 0 -45px; text-indent:20px;margin-top:5px;}
+
+.header .banner .l{height:355px;width:388px;}
+.header .banner .r{ width:359px;}
+.header .banner .r a{ float:left;width:175px; height:175px; margin:0 4px 3px 0; overflow:hidden;}
+
+
+.content dt{ height:50px; line-height:50px; font-size:16px; text-indent:10px; margin-top:10px;}
+.content dt span{ color:#ff0099;}
+.content dt b{ font-size:12px; font-weight:normal; margin-left:20px;}
+.content dt i{ font-style:normal; color:#ff80cc;}
+.content .row1 a{ float:left; width:86px; height:86px; overflow:hidden;}
+.content .row1 .big{ width:210px; height:175px;}
+.content .row1 div{ width:540px;}
+.content .row1 div a{ margin:0 4px 3px 0;}
+
+.content li{float: left; margin:0 10px 14px 0;}
+.content li a {color: #999;display: block;height: 180px;overflow: hidden;position: relative;width: 182px; }
+.content li img {margin-left:-3%; margin-top:-10%;}
+.content li a:hover{color:#999;box-shadow:0 0 15px 0 rgba(255,204,51,.5)}
+.content li a:hover .icon-playbg{ display:block;}
+.mod-bd-text {position: absolute;left: 0;top: 124px;bottom: 0;border-top: solid 1px #FFF;background-color: #f5f5f5;width: 200px;}
+.content li p {padding: 6px 10px 0;height: 20px;}
+.content li p span {float: left;}
+.mod-nickname {float: left;display: inline-block;max-width: 155px;_width: 155px;overflow: hidden;-ms-text-overflow: ellipsis;-o-text-overflow: ellipsis;text-overflow: ellipsis;white-space: nowrap;font-size: 14px;color: #666;}
+.icon-base {display: inline-block;background: url(http://app.2339.com/2339/www/styles/images/index/index-93c82d.png) 10000px 10000px no-repeat;vertical-align: middle;}
+.icon-eye {background-position: -90px -91px;width: 16px;height: 16px;}
+.mod-num{padding-left:10px;}
+.icon-time-on {background-position: -47px -91px;}
+.icon-time-on {height: 16px;width: 16px;}
+.icon-playbg {background-position: 0 -835px; display: none;   height: 124px; left: 0;position: absolute;top: 0;width: 200px;}
+
+.footer{ background:#454857;padding:50px; text-align:center;margin-top:30px; line-height:1.7}
+.footer ,.footer a{ color:#FFF}
