@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0053)http://c.qjll.lemongame.net/idxc.php?cmd=admin.header -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="func.js"></script><script type="text/javascript" src="jquery-1.7.1.min.js"></script><script type="text/javascript" src="jquery-ui-1.8.16.custom.min.js"></script><script type="text/javascript" src="jquery.bgiframe-2.1.2.js"></script><link href="common.css" type="text/css" rel="stylesheet"><link href="jquery-ui-1.8.16.custom.css" type="text/css" rel="stylesheet"><title></title><style type="text/css">
+:link,:visited {
+	color: rgb(255, 255, 255);
+}
+
+a:hover {
+	color: #f60;
+}
+#sys_tm {
+    width: 330px;
+}
+</style>
+<script type="text/javascript">
+var timer;
+var uninxtm = 1409194904; // 从服务器获取时间戳
+var utm = 1409194904; // 校验时间戳，与unixtm相同
+var srvoffset = 7; // 国际标准时间（UTC）小时偏移值
+
+$(document).ready(function(){
+    timer = setInterval("disptime()",1000);
+});
+
+/**
+ * 将unix时间戳转换为 Y-m-d H:i:s的格式
+ * @param  int now  unix时间戳
+ * @param  int offset 国际标准时间（UTC）小时偏移值
+ * @return string 
+ */
+function formatDate(now, offset) {
+    var d = new Date(now * 1000);
+    var localTime = d.getTime(); // 当地时间
+    var localOffset = d.getTimezoneOffset() * 60000; // 当地时间偏移值
+    var srvTime = localTime + localOffset + (3600000*offset); // 当前国际标准时间（UTC）    var commonTime = new Date(srvTime);
+    var commonTime = new Date(srvTime);
+    var year   = addzero(commonTime.getFullYear());
+    var month  = addzero(commonTime.getMonth()+1);
+    var date   = addzero(commonTime.getDate());
+    var hour   = addzero(commonTime.getHours());
+    var minute = addzero(commonTime.getMinutes());
+    var second = addzero(commonTime.getSeconds());
+
+    return year+"-"+month+"-"+date+" "+hour+":"+minute+":"+second+" +07:00 ICT";
+}
+/**
+ * 月 日 小时 分 秒处理 小于10就增加一个0 如1 就为01
+ * @param  {[type]} num 
+ * @return {[type]}     
+ */
+function addzero(num) {
+    var n = parseInt(num);
+    var res = num;
+    if (n < 10) {
+        res = '0' + res;
+    }
+    return res;
+}
+
+function disptime(){
+    utm += 1;
+    if ((utm-1) == uninxtm) {
+        var addtm = 0;
+    }
+    else {
+        var addtm = 1;
+    }
+    uninxtm += addtm;
+    var showtm = formatDate(uninxtm, srvoffset);
+
+    /*设置div的内容为当前时间*/
+    document.getElementById("showtm").innerHTML=showtm;
+}
+</script>
+</head><body>
+  <table cellspacing="0" cellpadding="0" border="0" style="width:100%;background:url(http://res.qjll.lemongame.net/static_cmd/images/header_bg.jpg)">
+    <tbody><tr>
+      <td width="260"><img height="56" src="header_left.jpg" width="260" alt="header_left"></td>
+      <td style="font-weight: bold; color: #fff; padding-top: 20px" align="center">当前用户：王欢【跨平台】 &nbsp;&nbsp; 
+        <a href="idxc(3).htm" target="content">密码修改</a> &nbsp;&nbsp; 
+        <a onclick="if (confirm(&#39;确定要退出吗？&#39;)) return true; else return false;" href="http://c.qjll.lemongame.net/idxc.php?cmd=sys.logout">退出系统</a> 
+      </td>
+      <td align="center" width="268" style="font-weight: bold; color: #fff; padding-top: 20px">
+        <div id="sys_tm"><font id="showtm" color="red">2014-08-28 10:02:28 +07:00 ICT</font></div>
+      </td>
+    </tr>
+  </tbody></table>
+  <table cellspacing="0" cellpadding="0" width="100%" border="0">
+    <tbody><tr><td style="background-color: #1c5db6;height:4px">&nbsp;</td></tr>
+  </tbody></table>
+
+<br><br></body></html>

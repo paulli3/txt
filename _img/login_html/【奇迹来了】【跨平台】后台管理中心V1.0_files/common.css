@@ -1,0 +1,211 @@
+/* RESET CSS */ /*
+Copyright (c) 2009, Shawphy(shawphy.com). All rights reserved.
+http://shawphy.com/2009/03/my-own-reset-css.html
+Based on YUI http://developer.yahoo.com/yui/reset/ 
+and Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html 
+Licensed under the BSD License:
+http://creativecommons.org/licenses/BSD/
+version: 1.1 | 20090303
+*/ /* 外补丁margin和内补丁padding归零 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,button,textarea,p,blockquote,th,td
+	{
+	margin: 0;
+	padding: 0;
+}
+
+/* 边框清除 */
+fieldset,img {
+	border: 0;
+}
+
+/* 去除获得焦点时的虚线框 */ /* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* 字体样式(font style/weight/size/variant) */
+address,caption,cite,code,dfn,em,strong,th,var,optgroup {
+	font-style: normal;
+	font-weight: normal;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+abbr,acronym {
+	border: 0;
+	font-variant: normal;
+}
+
+input,button,textarea,select,optgroup,option {
+	font-family: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+code,kbd,samp,tt {
+	font-size: 100%;
+}
+
+/*@purpose To enable resizing for IE */
+	/*@branch For IE6-Win, IE7-Win */
+input,button,textarea,select { *
+	font-size: 100%;
+}
+
+/* 行高 */
+body {
+	line-height: 1.5;
+}
+
+/* 列表样式 */
+ol,ul {
+	list-style: none;
+}
+
+/* 表格，需要在HTML中添加 cellspacing="0" 效果最佳 */
+	/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption,th {
+	text-align: left;
+}
+
+/* 上下标 */
+sup,sub {
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+/* 插入样式  */ /* remember to highlight anchors and inserts somehow! */
+ins {
+	text-decoration: none;
+}
+
+/* 引用元素的引号 */
+blockquote,q {
+	quotes: none;
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+	content: '';
+	content: none;
+}
+
+/* 链接的下划线 */
+:link,:visited {
+	text-decoration: none;
+}
+
+/* COMMON CSS */
+html,body {
+	height: 100%;
+	width: 100%;
+	font-size: 12px;
+	font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
+}
+
+:link,:visited {
+	color: #036;
+}
+
+a:hover {
+	color: #f60;
+}
+
+/* id=datas table */
+#datas tr th {
+	background-color: #8FB4F5;
+	text-align: center;
+	height: 40px;
+}
+
+#datas tr td {
+	height: 25px;
+	text-align: center;
+}
+
+/* 偶数tr */
+tr.alt td {
+	background: #ecf6fc;
+}
+
+/* 鼠标停留tr */
+tr.over td {
+	background: #bcd4ec;
+}
+
+/* 表格黑色框线 for IE */
+table,table tr,table tr th,table tr td {
+	border-color: #000000;
+}
+
+/* 信息提示 */
+#errormsg {
+	background: none repeat scroll 0 0 #FFEBEB;
+	border: 1px solid #DD3D11;
+	line-height: 25px;
+    padding-top: 10px; padding-bottom: 10px;
+	width: 400px;
+}
+
+#infomsg {
+	background: none repeat scroll 0 0 #99FF66;
+	border: 1px solid #DD3D11;
+	line-height: 25px;
+    padding-top: 10px; padding-bottom: 10px;
+	width: 400px;
+}
+
+/* button */
+.button {
+	height:26px;
+	/* IE hack */
+    line-height:22px;
+}
+/* FF-input hack */
+input::-moz-focus-inner{ border: 0;padding: 0;}
+
+/* divide HR */
+.divide {
+	width: 85%;
+	border:1px dashed orange; height:1px;
+}
+
+/* srv_pos or pri_pos hr */
+.pos_divide {
+    width: 100%; float: left;
+}
+.pos_divide hr {
+    width : 100%; border-color: rgb(0,0,200);
+    border-style: solid; border-width: 0 0 1px 0;	
+}
+
+/* srv_pos */
+.srv_pos {
+    float: left; text-align: left;
+    height: 25px; line-height: 25px;
+}
+
+/* pri_pos */
+.pri_pos {
+    float: left; width: 130px; text-align: left;
+    height: 25px; line-height: 25px; overflow: hidden;
+}
+
+/* types_pos */
+.types_pos {
+    float: left; width: 130px; text-align: left;
+    height: 25px; line-height: 25px; overflow: hidden;
+}
+
+/* border bottom line style */
+.border_bottom_line {
+	border-style: solid; border-width: 0 0 1px 0; border-color: #66CCFF;
+}

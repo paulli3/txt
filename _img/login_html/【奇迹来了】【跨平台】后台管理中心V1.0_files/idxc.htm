@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0056)http://c.qjll.lemongame.net/idxc.php?cmd=admin.dragframe -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="func.js"></script><script type="text/javascript" src="jquery-1.7.1.min.js"></script><script type="text/javascript" src="jquery-ui-1.8.16.custom.min.js"></script><script type="text/javascript" src="jquery.bgiframe-2.1.2.js"></script><link href="common.css" type="text/css" rel="stylesheet"><link href="jquery-ui-1.8.16.custom.css" type="text/css" rel="stylesheet"><title></title><style type="text/css">
+<!--
+body {
+background-image: url('http://res.qjll.lemongame.net/static_cmd/images/menu_bg.jpg');
+}
+.drag_top, .drag_center, .drag_bottom, .drag_show_all, .drag_hide_all, .drag_logout, .drag_pwdmod{
+  position: absolute; 
+  overflow:hidden;
+  width: 16px;
+  left: 0px;
+  margin: 0;
+}
+
+.drag_top {
+  top:0;
+}
+.drag_center {
+  top: 50%;
+  margin: -31px 0 0 0;
+}
+.drag_bottom {
+  top: 26px;
+}
+
+.drag_hide_all {
+  top: 52px;
+}
+.drag_show_all {
+  top: 78px;
+}
+.drag_pwdmod {
+  top: 104px;
+}
+.drag_logout {
+  top: 130px;
+}
+-->
+</style>
+<script type="text/javascript" language="JavaScript">
+<!--
+var pic = new Image();
+pic.src="http://res.qjll.lemongame.net/static_cmd/images/bar_open.png";
+
+function toggleMenu()
+{
+  frmBody = parent.document.getElementById('bodyframeset');
+  imgArrow = document.getElementById('img');
+
+  if (frmBody.cols == "0, 17, *")
+  {
+    frmBody.cols="175, 17, *";
+    imgArrow.src = "http://res.qjll.lemongame.net/static_cmd/images/bar_close.png";
+  }
+  else
+  {
+    frmBody.cols="0, 17, *";
+    imgArrow.src = "http://res.qjll.lemongame.net/static_cmd/images/bar_open.png";
+  }
+}
+
+/**
+ * 滚动条设置
+ * @param  {[type]} e 1为顶部 0为到底部
+ * @return {[type]}   [description]
+ */
+function scrollSet(e) {
+  if (e) {
+    parent.leftmenu.window.scroll(0, 0);
+  }
+  else {
+    parent.leftmenu.window.scroll(0, 99999);
+  }
+}
+-->
+</script>
+</head><body><div class="drag_bottom" id="scrollset_bottom">
+    <a href="javascript:scrollSet(0);">
+      <img src="bar_bottom.png" width="16" id="bottom">
+    </a>
+</div>
+<div class="drag_top" id="scrollset_top">
+    <a href="javascript:scrollSet(1);">
+      <img src="bar_top.png" width="16" id="top">
+    </a>
+</div>
+<div class="drag_center">
+    <a href="javascript:toggleMenu();">
+      <img src="bar_close.png" width="16" height="63" id="img">
+    </a>
+</div>
+<div class="drag_show_all" id="drag_show_all">
+    <a href="javascript:parent.leftmenu.ShowAll();">
+      <img src="bar_show.png" width="16" id="show_all">
+    </a>
+</div>
+<div class="drag_hide_all" id="drag_hide_all">
+    <a href="javascript:parent.leftmenu.HideAll();">
+      <img src="bar_hide.png" width="16" id="hide_all">
+    </a>
+</div>
+<div class="drag_pwdmod" id="drag_pwdmod">
+    <a href="idxc(3).htm" target="content">
+      <img src="bar_modpwd.png" width="16" id="logout" alt="密码修改">
+    </a> 
+</div>
+<div class="drag_logout" id="drag_logout">
+    <a onclick="if (confirm(&#39;确定要退出吗？&#39;)) return true; else return false;" href="http://c.qjll.lemongame.net/idxc.php?cmd=sys.logout">
+      <img src="bar_exit.png" width="16" id="logout" alt="退出系统">
+    </a> 
+</div>
+
+
+<br><br></body></html>

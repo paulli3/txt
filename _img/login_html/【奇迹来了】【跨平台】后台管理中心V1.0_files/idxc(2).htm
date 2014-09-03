@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0055)http://c.qjll.lemongame.net/idxc.php?cmd=admin.leftmenu -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="func.js"></script><script type="text/javascript" src="jquery-1.7.1.min.js"></script><script type="text/javascript" src="jquery-ui-1.8.16.custom.min.js"></script><script type="text/javascript" src="jquery.bgiframe-2.1.2.js"></script><link href="common.css" type="text/css" rel="stylesheet"><link href="jquery-ui-1.8.16.custom.css" type="text/css" rel="stylesheet"><title></title><style type="text/css">
+<!--
+body {
+    background-image: url('http://res.qjll.lemongame.net/static_cmd/images/menu_bg.jpg');
+    overflow-x:hidden;
+}
+
+#menu {
+    width: 150px;
+    margin-left: 5px;
+    padding: 0px;
+    text-align: left;
+    list-style: none;
+}
+
+#menu .item {
+    margin-top: 5px;
+    padding: 0px;
+    list-style: none;
+    /* for IE8 margin */
+    overflow: hidden;
+}
+
+a.title:link,a.title:visited,a.title:hover {
+    display: block;
+    background: url(http://res.qjll.lemongame.net/static_cmd/images/menu_bt.gif) no-repeat;
+    color: #385065;
+    font-weight: bold;
+    padding: 2px 0 0 22px;
+    width: 128px;
+    line-height: 23px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#menu .item ul {
+    border: 1px solid #9FACB7;
+    margin: 0;
+    width: 128px;
+    padding: 3px 0px 3px 20px;
+    list-style: none;
+    display: none;
+}
+
+#menu .item ul li {
+    display: block;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+#menu .item .list {
+    border: 0;
+    width: 108px;
+    margin-left: -5px;
+}
+
+hr.dothr {
+    margin-left: 0px;
+    width: 108px;
+    color: blue;
+    text-align: left;
+}
+-->
+</style>
+<script type="text/javascript">
+//<![CDATA[
+  function ShowAll() {
+    $('.optiton').show();
+    $('.list').show();
+    $('span').html('－');
+    $('.list').each(function(){
+      setCookie('c'+$(this).attr('id'), 1);
+    });
+    $('.title').each(function(){
+      setCookie("copt_"+$(this).attr('name'), 1);
+    });
+  }
+  function HideAll() {
+    $('.optiton').hide();
+    $('.list').hide();
+    $('span').html('＋');
+    $('.list').each(function(){
+      setCookie('c'+$(this).attr('id'), 0);
+    });
+    $('.title').each(function(){
+      setCookie("copt_"+$(this).attr('name'), 0);
+    });
+  }
+  function setCookie(sName,sValue,expireHours) {
+    var cookieString = sName + "=" + escape(sValue);
+    if (expireHours>0) {
+      var date = new Date();
+      date.setTime(date.getTime + expireHours * 3600 * 1000);
+      cookieString = cookieString + "; expire=" + date.toGMTString();
+    }
+    document.cookie = cookieString;
+  }
+
+  function getCookie(sName) {
+    var aCookie = document.cookie.split("; ");
+    if (sName) {
+      for (var j=0; j < aCookie.length; j++){
+        var aCrumb = aCookie[j].split("=");
+        if (escape(sName) == aCrumb[0]) { 
+          return unescape(aCrumb[1]);
+        }
+      }
+    }
+    else {
+      if (aCookie.length > 0) {
+        return aCookie;
+      }
+    }
+    return null;
+  }
+
+  function showsubmenu(sid) {
+    if ($('#tt'+sid).css('display') != 'block') {
+      $('#tt'+sid).show();
+      $('#t'+sid).html('－');
+      setCookie("ctt"+sid,1);
+    }
+    else {
+      $('#tt'+sid).hide();
+      $('#t'+sid).html('＋');
+      setCookie("ctt"+sid,0);
+    }
+  }
+
+  $(document).ready(function(){
+    var cookie = getCookie('');
+    if (cookie != null) {
+      for (var j=0; j<cookie.length; j++) {
+        var aCrumb = cookie[j].split("=");
+        if (aCrumb[1] == 1) {
+          if (aCrumb[0].search(/^copt_/) >= 0) {
+            $('#'+aCrumb[0].substring(1)).show();
+          }
+          else if (aCrumb[0].search(/^ctt/) >= 0) {
+            $('#'+aCrumb[0].substring(1)).show();
+            $('#'+aCrumb[0].substring(2)).html('－');
+          }
+        }
+      }
+    }
+
+    $('.title').click(function(){
+      if ( $('#opt_'+$(this).attr('name')).css('display') != 'block' ) {
+//        $('.optiton').hide();
+        $('#opt_'+$(this).attr('name')).show();
+          setCookie("copt_"+$(this).attr('name'),1);
+        }
+      else {
+        $('#opt_'+$(this).attr('name')).hide();
+        setCookie("copt_"+$(this).attr('name'),0);
+      }
+    });
+  });
+//]]>
+</script>
+</head><body>&nbsp;&nbsp;－<a href="javascript:void(0)" onclick="ShowAll()">全部展开</a>&nbsp;&nbsp;＋<a href="javascript:void(0)" onclick="HideAll()">全部收起</a><table style="width:175px;border:0px;" cellspacing="0" cellpadding="0"><tbody><tr>
+    <td>
+        <ul id="menu"><li class="item"><a href="javascript:void(0)" class="title" name="n12" id="n12">运营数据</a><ul id="opt_n12" class="optiton" style="display: block;"><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=operation.days" target="content">每日数据汇总</a></li><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=operation.conversion" target="content">转换率统计</a></li><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=operation.distrib" target="content">分布统计</a></li></ul></li><li class="item"><a href="javascript:void(0)" class="title" name="n4" id="n4">数据分析</a><ul id="opt_n4" class="optiton" style="display: block;"><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=analysis.sys" target="content">各系统元宝消耗</a></li><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=retained.calc" target="content">留存率统计</a></li></ul></li><li class="item"><a href="javascript:void(0)" class="title" name="n6" id="n6">服务器</a><ul id="opt_n6" class="optiton" style="display: block;"><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=server.enter" target="content">登录服务器</a></li><li><span id="t10">－</span><a href="javascript:showsubmenu(10)">服务器状态</a></li><li><ul id="tt10" style="display: block;" class="list"><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=server.stastic" target="content">基本状态汇总</a></li></ul></li><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=server.enter&history" target="content">登录历史服</a></li></ul></li><li class="item"><a href="javascript:void(0)" class="title" name="n7" id="n7">GM工具</a><ul id="opt_n7" class="optiton" style="display: block;"><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=sysmsg.broadcast" target="content">系统广播</a></li><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=sysmaila.conf" target="content">全服邮件广播</a></li><li><span id="t13">－</span><a href="javascript:showsubmenu(13)">系统公告</a></li><li><ul id="tt13" style="display: block;" class="list"><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=bulletin.conf" target="content">页面公告</a></li><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=igbulletin.conf" target="content">游戏内公告</a></li></ul></li><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=gmtool.block" target="content">封号</a></li><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=gmtool.ip" target="content">IP封停</a></li></ul></li><li class="item"><a href="javascript:void(0)" class="title" name="n10" id="n10">充值管理</a><ul id="opt_n10" class="optiton" style="display: block;"><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=pay.calc" target="content">充值汇总</a></li><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=pay.calc_analysis" target="content">充值金额分析</a></li></ul></li><li class="item"><a href="javascript:void(0)" class="title" name="n9" id="n9">后台管理</a><ul id="opt_n9" class="optiton" style="display: block;"><li>－<a href="idxc(3).htm" target="content">密码修改</a></li><li>－<a href="http://c.qjll.lemongame.net/idxc.php?cmd=sys.logout" onclick="if (confirm(&#39;确定要退出吗？&#39;)) return true; else return false;">退出系统</a></li></ul></li></ul>
+      </td>
+    </tr>
+  </tbody></table><br><br></body></html>

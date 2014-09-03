@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0051)http://c.qjll.lemongame.net/idxc.php?cmd=sys.modpwd -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="func.js"></script><script type="text/javascript" src="jquery-1.7.1.min.js"></script><script type="text/javascript" src="jquery-ui-1.8.16.custom.min.js"></script><script type="text/javascript" src="jquery.bgiframe-2.1.2.js"></script><link href="common.css" type="text/css" rel="stylesheet"><link href="jquery-ui-1.8.16.custom.css" type="text/css" rel="stylesheet"><title></title>
+<style type="text/css">
+.td1 {
+	text-align: right; padding-right: 5px;
+}
+
+.td2 {
+	text-align: left; width: 200px;
+}
+
+#display {
+	border-collapse: separate;
+	border-spacing: 10px;
+	text-align: left;
+}
+#modpwd_info {
+	color: red; text-align: center;
+}
+</style>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#oldpwd').focus();
+});
+</script>
+</head><body><table cellspacing="0" cellpadding="0" width="100%" align="center" border="0"><tbody><tr style="height:28px"><td style="background-image:url(&#39;http://res.qjll.lemongame.net/static_cmd/images/title_bg1.jpg&#39;)">当前位置：&nbsp;&nbsp;后台管理&nbsp;&nbsp;&gt;&nbsp;&nbsp;密码修改</td></tr><tr><td style="background-color:#b1ceef;height:1px"></td></tr><tr style="height:20px;"><td style="background-image:url(&#39;http://res.qjll.lemongame.net/static_cmd/images/shadow_bg.jpg&#39;)"></td></tr></tbody></table>
+      <br>
+  <form action="" method="post">
+  <table border="0" cellspacing="0" style="width:100%;">
+    <tbody><tr>
+      <td align="center">
+        <table id="display" border="0" cellspacing="10">
+          <tbody><tr>
+            <td class="td1">您的旧密码：</td>
+            <td class="td2">
+              <input class="border_bottom_line" type="password" id="oldpwd" name="oldpwd" value="">
+            </td>
+          </tr>
+          <tr>
+            <td class="td1">您的新密码：</td>
+            <td class="td2">
+              <input class="border_bottom_line" type="password" name="newpwd" id="newpwd" value="">
+            </td>
+          </tr>
+          <tr>
+            <td class="td1">确认新密码：</td>
+            <td class="td2">
+              <input class="border_bottom_line" type="password" name="vpwd" id="vpwd" value="">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+            <br>
+            <table cellspacing="0" border="0"><tbody><tr><td style="text-align:left;color:red;">密码字符长度限制12字符内</td></tr></tbody></table>            <br><br>
+            <input type="submit" class="button" id="submit" value="提交">
+            </td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
+  </form>
+<br><br></body></html>
