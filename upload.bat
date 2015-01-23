@@ -1,5 +1,5 @@
 @echo off
-echo %~1
+echo %~2
 set  gitcmd=%~1
 if "%gitcmd%" == "" (
     set gitcmd=push
