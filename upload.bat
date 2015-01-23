@@ -1,13 +1,12 @@
 @echo off
-echo %~2
 set  gitcmd=%~1
 if "%gitcmd%" == "" (
     set gitcmd=push
 )else if "%gitcmd:~-4%" == "help" (
     goto help
 )
-set  gitUrl=%2
-set  user=%3
+set  gitUrl=%~2
+set  user=%~3
  if  "%user%" == ""  (
      set user=%COMPUTERNAME% 
  )
