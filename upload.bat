@@ -25,7 +25,7 @@ git commit -m "normal %date% %time% %CommonStr%"
 ::echo set pws=WScript.CreateObject("WScript.Shell")>%temp%\pws.vbs
 ::echo pws.SendKeys "xxxx{ENTER}">>%temp%\pws.vbs
 ::echo pws.SendKeys "xxxx{ENTER}">>%temp%\pws.vbs
-wscript pws.vbs & git %gitcmd% %gitUrl%
+echo wscript pws.vbs & git %gitcmd% %gitUrl%
 goto END
 
 :pull
