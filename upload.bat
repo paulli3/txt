@@ -1,5 +1,5 @@
 @echo off
-set  gitcmd=%1
+set  gitcmd=%~1
 if "%gitcmd%" == "" (
     set gitcmd=push
 )else if "%gitcmd:~-4%" == "help" (
